@@ -31,7 +31,6 @@ module.exports = function(){
     
             var RainmakerContract = web3.eth.contract(rainmaker_abi);
             var Rainmaker_instance = RainmakerContract.at(address_rainmaker);
-            // nonce += 1;
             console.log("======== Nonce while sending transaction = ", nonce);
 
             try {
@@ -77,10 +76,9 @@ module.exports = function(){
             var serializedTx = tx.serialize();
 
             var hex_serialized = '0x' + serializedTx.toString('hex');
-            // console.log("========= TXN serialized", hex_serialized);
-            console.log("========= TXN serialized");
-            nonce = nonce_original;
-
+            console.log("========= TXN serialized", hex_serialized);
+            // console.log("========= TXN serialized");
+            
             // web3.eth.sendRawTransaction(hex_serialized, function(err, hash) {
             //     if (!err) {
             //         console.log("Hash of the TXN = ", hash);

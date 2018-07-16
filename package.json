@@ -1,6 +1,6 @@
 {
   "name": "batch-ether-send",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This is a npm package which parses a csv file and batch sends Ether to the addresses mentioned in the file",
   "main": "index.js",
   "scripts": {
