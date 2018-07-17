@@ -17,7 +17,7 @@ module.exports = function(){
         }))
         .on('data', function(csvrow) {
             _to.push(csvrow[0]);
-            _value.push(csvrow[1] * 1000000000000000000);
+            _value.push(csvrow[1] * 1000);
         })
         .on('end', function() {
             console.log(_to);
@@ -27,7 +27,7 @@ module.exports = function(){
             var nonce = web3.eth.getTransactionCount('0xda8107332d3edC065753d23fe23a42a308Ac8879');
             console.log("========= Nonce found = ", nonce);
 
-            var address_rainmaker = '0xD097605b320F20b2047CfCCBdF764A3D1818BD7d';
+            var address_rainmaker = '0xe2A9c90cC926FFF44bF4b024280352910e4e00fc';
     
             var RainmakerContract = web3.eth.contract(rainmaker_abi);
             var Rainmaker_instance = RainmakerContract.at(address_rainmaker);
@@ -79,13 +79,13 @@ module.exports = function(){
             console.log("========= TXN serialized", hex_serialized);
             // console.log("========= TXN serialized");
             
-            // web3.eth.sendRawTransaction(hex_serialized, function(err, hash) {
-            //     if (!err) {
-            //         console.log("Hash of the TXN = ", hash);
-            //     } else {
-            //         console.log(err);
-            //     }
-            // });
+            web3.eth.sendRawTransaction(hex_serialized, function(err, hash) {
+                if (!err) {
+                    console.log("Hash of the TXN = ", hash);
+                } else {
+                    console.log(err);
+                }
+            });
 
             _to = [];
             _value = [];
