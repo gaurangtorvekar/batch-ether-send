@@ -1,4 +1,3 @@
-var sleep = require('sleep');
 var Tx = require('ethereumjs-tx');
 var Web3 = require('web3');
 var fs = require('fs'); 
